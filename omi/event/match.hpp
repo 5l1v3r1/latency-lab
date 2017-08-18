@@ -42,8 +42,7 @@ struct match {
 
     // Return match timestamps
     auto timestamps() const {
-        return omi::match::timestamps<decltype(std::declval<inbound>().timestamp()),
-            decltype(std::declval<outbound>().timestamp())>{trigger.time(), response.time()};
+        return omi::match::timestamps<decltype(std::declval<inbound>().timestamp()), decltype(std::declval<outbound>().timestamp())>{trigger.time(), response.time()};
     }
 
   // TODO: remove this

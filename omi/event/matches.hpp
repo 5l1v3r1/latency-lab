@@ -23,9 +23,17 @@ struct matches : std::vector<event::match<trigger, response>> {
         return result;
     }
 
+    /*
+    auto timestamps() const {
+        std::vector<typename match<trigger, response>::> result(this->size());
+        std::transform(this->begin(), this->end(), result.begin(), [](const auto &current) { return current.timestamps(); });
+        return result;
+    }
+    */
+
     // Build list of infos from matches
     auto infos() const {
-        // To preallocate we need a cool way to make this default constructable
+        // To preallocate we need a cool way to make this default constructable (use enable_if
         std::vector<omi::match::info<trigger, response>> result;
         for (const auto &match : *this) {
             result.push_back(match.info());
