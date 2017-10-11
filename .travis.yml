@@ -5,6 +5,7 @@ compiler: gcc
 dist: trusty
 
 cache:
+  timeout: 1000
   directories:
     - cmake-3.9.2
     - boost_1_64_0
