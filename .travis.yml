@@ -4,12 +4,6 @@ compiler: gcc
 
 dist: trusty
 
-cache:
-  timeout: 1000
-  directories:
-    - cmake-3.9.2
-    - boost_1_64_0
-
 before_install:
   # C++14
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
